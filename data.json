@@ -1,0 +1,51 @@
+{
+    "sistema": "Gestor de Control Operativo y Financiero",
+    "descripcion": "Datos de ejemplo para precarga inicial. Se cargan en LocalStorage solo si no existen registros previos.",
+    "registros": [
+        {
+            "id": "ejemplo-001",
+            "descripcion": "Venta de servicios de consultoría",
+            "categoria": "ingreso",
+            "tipo": "ingreso",
+            "monto": "15000.00",
+            "fecha": "2026-11-05",
+            "fechaRegistro": "2026-11-05T10:30:00.000Z"
+        },
+        {
+            "id": "ejemplo-002",
+            "descripcion": "Pago de renta de oficina",
+            "categoria": "operativo",
+            "tipo": "egreso",
+            "monto": "8500.00",
+            "fecha": "2026-11-08",
+            "fechaRegistro": "2026-11-08T09:00:00.000Z"
+        },
+        {
+            "id": "ejemplo-003",
+            "descripcion": "Compra de material de oficina",
+            "categoria": "administrativo",
+            "tipo": "egreso",
+            "monto": "2350.50",
+            "fecha": "2026-11-12",
+            "fechaRegistro": "2026-11-12T14:15:00.000Z"
+        },
+        {
+            "id": "ejemplo-004",
+            "descripcion": "Cobro a cliente por proyecto web",
+            "categoria": "ingreso",
+            "tipo": "ingreso",
+            "monto": "22000.00",
+            "fecha": "2026-11-15",
+            "fechaRegistro": "2026-11-15T11:45:00.000Z"
+        },
+        {
+            "id": "ejemplo-005",
+            "descripcion": "Pago de servicios de internet y telefonía",
+            "categoria": "operativo",
+            "tipo": "egreso",
+            "monto": "1200.00",
+            "fecha": "2026-11-18",
+            "fechaRegistro": "2026-11-18T16:00:00.000Z"
+        }
+    ]
+}

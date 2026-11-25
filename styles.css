@@ -1,0 +1,372 @@
+/* ============================================================
+   Gestor de Control Operativo y Financiero
+   CSS3 puro — Mobile-First, Flexbox / Grid
+   ============================================================ */
+
+/* ---------- Variables y Reset ---------- */
+:root {
+    --color-bg: #f4f6f9;
+    --color-surface: #ffffff;
+    --color-text: #1f2937;
+    --color-muted: #6b7280;
+    --color-primary: #2563eb;
+    --color-primary-dark: #1d4ed8;
+    --color-danger: #dc2626;
+    --color-danger-dark: #b91c1c;
+    --color-success: #16a34a;
+    --color-border: #e5e7eb;
+    --color-shadow: rgba(15, 23, 42, 0.08);
+    --radius: 12px;
+    --spacing: 1rem;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 100%;
+}
+
+body {
+    font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.5;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 var(--spacing);
+}
+
+/* ---------- Header ---------- */
+.app-header {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+    color: #fff;
+    padding: 1.5rem 0;
+    box-shadow: 0 2px 8px var(--color-shadow);
+}
+
+.header-content h1 {
+    font-size: 1.35rem;
+}
+
+.subtitle {
+    font-size: 0.85rem;
+    opacity: 0.85;
+    margin-top: 0.25rem;
+}
+
+/* ---------- Dashboard ---------- */
+.dashboard {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing);
+    padding: var(--spacing) 0;
+}
+
+.metric-card {
+    text-align: center;
+    padding: 1.25rem 1rem;
+}
+
+.metric-card h2 {
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-muted);
+}
+
+.metric-value {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-top: 0.5rem;
+}
+
+.metric-value.positive { color: var(--color-success); }
+.metric-value.negative { color: var(--color-danger); }
+
+/* ---------- Layout general ---------- */
+.layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing);
+    padding-bottom: var(--spacing);
+}
+
+.card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    box-shadow: 0 1px 3px var(--color-shadow);
+}
+
+.card h2 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--color-primary);
+    display: inline-block;
+    padding-bottom: 0.25rem;
+}
+
+/* ---------- Formulario ---------- */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.9rem;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.35rem;
+}
+
+.form-group input,
+.form-group select,
+.table-header select {
+    font-size: 1rem;
+    padding: 0.65rem 0.75rem;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    background: #fff;
+    color: var(--color-text);
+    width: 100%;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.table-header select:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.form-group input:user-invalid,
+.form-group select:user-invalid {
+    border-color: var(--color-danger);
+}
+
+/* ---------- Botones ---------- */
+.btn {
+    display: inline-block;
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 0.7rem 1.2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.btn-primary {
+    background: var(--color-primary);
+    color: #fff;
+    width: 100%;
+}
+
+.btn-primary:hover { background: var(--color-primary-dark); }
+
+.btn-secondary {
+    background: #e5e7eb;
+    color: var(--color-text);
+}
+
+.btn-secondary:hover { background: #d1d5db; }
+
+.btn-danger {
+    background: var(--color-danger);
+    color: #fff;
+}
+
+.btn-danger:hover { background: var(--color-danger-dark); }
+
+.feedback {
+    margin-top: 0.75rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    min-height: 1.2em;
+}
+
+.feedback.success { color: var(--color-success); }
+.feedback.error { color: var(--color-danger); }
+
+/* ---------- Tabla ---------- */
+.table-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.table-header h2 {
+    margin-bottom: 0;
+    border-bottom: none;
+}
+
+.filter-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-muted);
+}
+
+.table-wrapper {
+    overflow-x: auto;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+th,
+td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid var(--color-border);
+    white-space: nowrap;
+}
+
+th {
+    background: #f9fafb;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--color-muted);
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+tbody tr:hover {
+    background: #f8fafc;
+}
+
+.empty-state {
+    text-align: center;
+    color: var(--color-muted);
+    padding: 2rem 0.75rem;
+    white-space: normal;
+}
+
+.badge {
+    display: inline-block;
+    padding: 0.2rem 0.6rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.badge.ingreso,
+.badge.operativo { background: #dcfce7; color: #166534; }
+
+.badge.egreso,
+.badge.administrativo { background: #fee2e2; color: #991b1b; }
+
+.amount {
+    font-weight: 700;
+}
+
+.amount.income { color: var(--color-success); }
+.amount.expense { color: var(--color-danger); }
+
+.btn-delete {
+    background: none;
+    border: none;
+    color: var(--color-danger);
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+    padding: 0.25rem 0.5rem;
+    border-radius: 6px;
+}
+
+.btn-delete:hover {
+    background: #fee2e2;
+}
+
+/* ---------- Reportes ---------- */
+.reports-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.import-label {
+    cursor: pointer;
+}
+
+/* ---------- Footer ---------- */
+.app-footer {
+    margin-top: auto;
+    padding: 1.25rem 0;
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--color-muted);
+    border-top: 1px solid var(--color-border);
+}
+
+/* ---------- Responsive ---------- */
+@media (min-width: 640px) {
+    .dashboard {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .reports-actions {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .reports-actions .btn,
+    .import-label {
+        width: auto;
+    }
+}
+
+@media (min-width: 900px) {
+    .header-content h1 {
+        font-size: 1.6rem;
+    }
+
+    .layout {
+        grid-template-columns: 320px 1fr;
+        align-items: start;
+    }
+
+    .form-card {
+        position: sticky;
+        top: 1rem;
+    }
+}
+
+/* Utilidades de impresión no aplican; solo mejoras de accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        transition: none !important;
+    }
+}
